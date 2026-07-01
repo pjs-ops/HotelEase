@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1A237E;
+  --accent-color: #FFD700;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --dark-gray: #333333;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-gray);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-medium py-2 px-6 rounded-md hover:bg-primary/90 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent text-primary font-medium py-2 px-6 rounded-md hover:bg-accent/90 transition-all;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .section-title {
+    @apply text-2xl font-bold text-primary mb-4;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-down {
+    animation: fadeInDown 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .animate-bounce-slow {
+    animation: bounceSlow 2s infinite;
+  }
+  .animate-fade-in-page {
+    animation: fadeInPage 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+@keyframes fadeInPage {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
